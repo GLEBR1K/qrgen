@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>qrgen</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chota@0.8.0/dist/chota.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row is-center">
+      <div class="col-6 col-5-md col-4-lg">
+
+        <div class="row">
+          <div class="col is-center">
+            <canvas id="canvas"></canvas>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col is-center">
+            <textarea id="content" placeholder="Type here...">qrgen</textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col is-center">
+            <button id="generate" class="button primary">Generate</button>
+            <a href="#" id="save" class="button clear">Save</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

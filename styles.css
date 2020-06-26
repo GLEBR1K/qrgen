@@ -1,0 +1,16 @@
+body {
+  --color-primary: #377ae2;
+}
+
+body.dark {
+  --bg-color: #232327;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+#content {
+  max-width: 350px;
+  resize: vertical;
+}
