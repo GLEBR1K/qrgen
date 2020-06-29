@@ -2,18 +2,18 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 
-const dev = process.env.NODE_ENV !== "production";
+const dev = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  mode: dev ? "development" : "production",
-  devtool: dev ? "inline-source-map" : "source-map",
+  mode: dev ? 'development' : 'production',
+  devtool: dev ? 'inline-source-map' : 'source-map',
 
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'dist/',
     filename: 'bundle.js',
-    chunkFilename: "[chunkhash].bundle.js"
+    chunkFilename: '[chunkhash].bundle.js',
   },
 
   module: {
@@ -21,15 +21,15 @@ module.exports = {
       {
         test: /\.js$/,
         use: [
-          "babel-loader"
+          'babel-loader',
         ],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: [ExtractCssChunks.loader, 'css-loader']
-      }
-    ]
+        use: [ExtractCssChunks.loader, 'css-loader'],
+      },
+    ],
   },
 
   plugins: [
@@ -37,6 +37,6 @@ module.exports = {
     new ExtractCssChunks({
       filename: 'bundle.css',
       chunkFilename: '[chunkhash].bundle.css',
-    })
-  ]
-}
+    }),
+  ],
+};

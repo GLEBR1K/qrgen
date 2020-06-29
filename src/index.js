@@ -7,39 +7,31 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
   document.body.classList.add('dark');
 }
 
-var canvas = document.getElementById('canvas');
-var content = document.getElementById('content');
-var generate = document.getElementById('generate');
-var save = document.getElementById('save');
-
-generate.addEventListener('click', function () {
-  var text = content.value;
-
-  if (text) {
-    generateQrCode(text);
-  }
-});
+const canvas = document.getElementById('canvas');
+const content = document.getElementById('content');
+const generate = document.getElementById('generate');
+const save = document.getElementById('save');
 
 function generateQrCode(text) {
-  var options = {
+  const options = {
     margin: 3,
-    width: 200
+    width: 200,
   };
 
-  QRCode.toCanvas(canvas, text, options, function (error) {
+  QRCode.toCanvas(canvas, text, options, (error) => {
     if (error) {
       console.error(error);
       return;
     }
 
     save.setAttribute('download', 'qrgen.png');
-    save.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+    save.setAttribute('href', canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream'));
   });
 }
 
 function initContent() {
-  var url = new URL(window.location.href);
-  var t = url.searchParams.get("t");
+  const url = new URL(window.location.href);
+  const t = url.searchParams.get('t');
 
   if (t) {
     content.value = t;
@@ -48,5 +40,13 @@ function initContent() {
     generateQrCode('qrgen');
   }
 }
+
+generate.addEventListener('click', () => {
+  const text = content.value;
+
+  if (text) {
+    generateQrCode(text);
+  }
+});
 
 initContent();
