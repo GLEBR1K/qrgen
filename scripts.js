@@ -32,4 +32,16 @@ function generateQrCode(text) {
   });
 }
 
-generateQrCode('qrgen');
+function initContent() {
+  var url = new URL(window.location.href);
+  var t = url.searchParams.get("t");
+
+  if (t) {
+    content.value = t;
+    generateQrCode(t);
+  } else {
+    generateQrCode('qrgen');
+  }
+}
+
+initContent();
