@@ -2,8 +2,10 @@
   "name": "qrgen",
   "version": "1.0.0",
   "description": "",
-  "main": "scripts.js",
+  "main": "./src/index.js",
   "scripts": {
+    "build": "webpack --mode production --config webpack.config.js",
+    "build:dev": "webpack --mode development --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +19,21 @@
   },
   "homepage": "https://github.com/GLEBR1K/qrgen#readme",
   "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "extract-css-chunks-webpack-plugin": "^4.7.5",
+    "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "chota": "^0.8.0",
+    "qrcode": "^1.4.4"
   }
 }
