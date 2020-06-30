@@ -26,13 +26,12 @@ jobs:
       run: git stash save pages
 
     - name: Checkout gh-pages
-      run: git checkout gh-pages
+      uses: actions/checkout@v2
+      with:
+        ref: 'gh-pages'
 
     - name: Apply Stash
       run: git stash apply stash@{0}
-
-    - name: Checkout gh-pages
-      run: git checkout gh-pages
 
     - name: Resolve Conflicts
       run: git checkout --theirs dist icons index.html manifest.json
@@ -41,7 +40,13 @@ jobs:
       run: git add -f dist icons index.html manifest.json
     
     - name: Commit
-      run: git commit -m "GitHub Pages automated update"
+      run: |
+        git config --local user.email "GLEBR1K@users.noreply.github.com"
+        git config --local user.name "GitHub Actions"
+        git diff-index --quiet HEAD || git commit -m "GitHub Pages automated update"
     
     - name: Push to origin/gh-pages
-      run: git push
+      uses: ad-m/github-push-action@master
+      with:
+        branch: 'gh-pages'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
