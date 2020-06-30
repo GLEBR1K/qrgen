@@ -1,0 +1,47 @@
+name: GitHub Pages Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Packages
+      run: npm i
+
+    - name: Build
+      run: npm run build
+    
+    - name: Add Production Items
+      run: git add -f dist icons index.html manifest.json
+
+    - name: Save Stash
+      run: git stash save pages
+
+    - name: Checkout gh-pages
+      run: git checkout gh-pages
+
+    - name: Apply Stash
+      run: git stash apply stash@{0}
+
+    - name: Checkout gh-pages
+      run: git checkout gh-pages
+
+    - name: Resolve Conflicts
+      run: git checkout --theirs dist icons index.html manifest.json
+    
+    - name: Add Files to Commit
+      run: git add -f dist icons index.html manifest.json
+    
+    - name: Commit
+      run: git commit -m "GitHub Pages automated update"
+    
+    - name: Push to origin/gh-pages
+      run: git push
