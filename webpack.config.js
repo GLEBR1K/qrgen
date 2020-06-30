@@ -39,4 +39,12 @@ module.exports = {
       chunkFilename: '[chunkhash].bundle.css',
     }),
   ],
+
+  devServer: {
+    contentBase: __dirname,
+    compress: true,
+    port: 9000,
+    host: '0.0.0.0',
+    disableHostCheck: true,
+  },
 };
