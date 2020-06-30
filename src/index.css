@@ -18,6 +18,10 @@ body.dark {
     padding-top: 10px;
 }
 
+#canvas {
+  border-radius: 4px;
+}
+
 #content {
   max-width: 350px;
   resize: vertical;
