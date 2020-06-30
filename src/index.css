@@ -6,12 +6,14 @@ body {
   --color-primary: #377ae2;
 }
 
-body.dark {
-  --bg-color: #232327;
-  --bg-secondary-color: #131316;
-  --font-color: #f5f5f5;
-  --color-grey: #ccc;
-  --color-darkGrey: #777;
+@media (prefers-color-scheme: dark) {
+  body {
+    --bg-color: #232327;
+    --bg-secondary-color: #131316;
+    --font-color: #f5f5f5;
+    --color-grey: #ccc;
+    --color-darkGrey: #777;
+  }
 }
 
 .container {
@@ -19,7 +21,11 @@ body.dark {
 }
 
 #canvas {
+  background-color: white;
+  border: 1px solid var(--color-lightGrey);
   border-radius: 4px;
+  width: 200px;
+  height: 200px;
 }
 
 #content {

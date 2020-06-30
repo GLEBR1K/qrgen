@@ -3,10 +3,6 @@ const QRCode = require('qrcode');
 import('chota');
 import('./index.css');
 
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  document.body.classList.add('dark');
-}
-
 const canvas = document.getElementById('canvas');
 const content = document.getElementById('content');
 const generate = document.getElementById('generate');
