@@ -11,17 +11,21 @@ const save = document.getElementById('save');
 function generateQrCode(text) {
   const options = {
     margin: 3,
-    width: 200,
+    width: 256,
   };
 
-  QRCode.toCanvas(canvas, text, options, (error) => {
+  QRCode.toDataURL(text, options, (error, url) => {
     if (error) {
       console.error(error);
       return;
     }
 
-    save.setAttribute('download', 'qrgen.png');
-    save.setAttribute('href', canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream'));
+    if (url) {
+      canvas.src = url;
+
+      save.setAttribute('download', 'qrgen.png');
+      save.setAttribute('href', url);
+    }
   });
 }
 
