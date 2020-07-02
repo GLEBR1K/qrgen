@@ -19,11 +19,10 @@ jobs:
     - name: Build
       run: npm run build
     
-    - name: Add Production Items
-      run: git add -f dist icons index.html manifest.json
-
-    - name: Save Stash
-      run: git stash
+    - name: Save Dist Folder
+      run: |
+        git add -f dist/
+        git stash
 
     - name: Checkout gh-pages
       uses: actions/checkout@v2
@@ -34,10 +33,17 @@ jobs:
       run: git stash pop --quiet || exit 0
 
     - name: Resolve Conflicts
-      run: git checkout --theirs dist icons index.html manifest.json
+      run: git checkout --theirs dist/
+
+    - name: Pull Actual Files From master
+      run: |
+        git checkout master -- icons/
+        git checkout master -- browserconfig.xml
+        git checkout master -- index.html
+        git checkout master -- manifest.json
     
     - name: Add Files to Commit
-      run: git add -f dist icons index.html manifest.json
+      run: git add -f dist/ icons/ browserconfig.xml index.html manifest.json
     
     - name: Commit
       run: |
