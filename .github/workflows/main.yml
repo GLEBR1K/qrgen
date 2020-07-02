@@ -23,7 +23,7 @@ jobs:
       run: git add -f dist icons index.html manifest.json
 
     - name: Save Stash
-      run: git stash save pages
+      run: git stash
 
     - name: Checkout gh-pages
       uses: actions/checkout@v2
@@ -31,7 +31,7 @@ jobs:
         ref: 'gh-pages'
 
     - name: Apply Stash
-      run: git stash apply stash@{0}
+      run: git stash pop --quiet || exit 0
 
     - name: Resolve Conflicts
       run: git checkout --theirs dist icons index.html manifest.json
