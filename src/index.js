@@ -8,6 +8,14 @@ const content = document.getElementById('content');
 const generate = document.getElementById('generate');
 const save = document.getElementById('save');
 
+function getFilename(text) {
+  const filename = text || 'qrgen';
+  return filename.substring(0, 251)
+    .replace(/[^a-z0-9]/gi, '_')
+    .toLowerCase()
+    .concat('.png');
+}
+
 function generateQrCode(text) {
   const options = {
     margin: 3,
@@ -23,7 +31,7 @@ function generateQrCode(text) {
     if (url) {
       canvas.src = url;
 
-      save.setAttribute('download', 'qrgen.png');
+      save.setAttribute('download', getFilename(text));
       save.setAttribute('href', url);
     }
   });
@@ -31,14 +39,11 @@ function generateQrCode(text) {
 
 function initContent() {
   const url = new URL(window.location.href);
-  const t = url.searchParams.get('t');
+  const t = url.searchParams.get('t') || '';
 
-  if (t) {
-    content.value = t;
-    generateQrCode(t);
-  } else {
-    generateQrCode('qrgen');
-  }
+  content.value = t;
+
+  generateQrCode(t || 'qrgen');
 }
 
 generate.addEventListener('click', () => {
