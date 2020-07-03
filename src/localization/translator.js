@@ -14,7 +14,7 @@ const getI18nConfig = (element) => {
   return { type: type || types.default, key };
 };
 
-function execute(i18n) {
+const execute = (i18n) => {
   const elements = document.querySelectorAll(elementsSelector);
 
   elements.forEach((element) => {
@@ -37,7 +37,7 @@ function execute(i18n) {
       }
     }
   });
-}
+};
 
 const translator = (error, i18n) => {
   if (error) { return; }
