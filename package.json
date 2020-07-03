@@ -42,6 +42,8 @@
   },
   "dependencies": {
     "chota": "^0.8.0",
+    "i18next": "^19.5.3",
+    "i18next-browser-languagedetector": "^5.0.0",
     "qrcode": "^1.4.4"
   }
 }

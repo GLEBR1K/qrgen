@@ -1,7 +1,8 @@
-const QRCode = require('qrcode');
+import QRCode from 'qrcode';
+import i18n from './localization';
 
-import('chota');
-import('./index.css');
+import 'chota';
+import './index.css';
 
 const canvas = document.getElementById('canvas');
 const content = document.getElementById('content');
@@ -54,4 +55,5 @@ generate.addEventListener('click', () => {
   }
 });
 
+i18n.init();
 initContent();
