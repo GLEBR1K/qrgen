@@ -22,7 +22,7 @@
 <body class="is-center">
   <div class="container">
     <div class="row is-center">
-      <div class="col-6 col-5-md col-4-lg">
+      <div class="col">
 
         <div class="row">
           <div class="col is-center">
@@ -38,8 +38,15 @@
 
         <div class="row">
           <div class="col is-center">
-            <button id="generate" class="button primary" data-i18n="generate">Generate</button>
-            <a href="#" id="save" class="button clear" data-i18n="save">Save</a>
+            <button id="generate" class="button primary">
+              <i class="fas fa-qrcode"></i>
+              <span data-i18n="generate">Generate</span>
+            </button>
+
+            <a href="#" id="save" class="button clear">
+              <i class="fas fa-arrow-alt-circle-down"></i>
+              <span class="hide-xs" data-i18n="save">Save</span>
+            </a>
           </div>
         </div>
 
