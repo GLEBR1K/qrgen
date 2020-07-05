@@ -32,3 +32,15 @@ body {
   max-width: 350px;
   resize: vertical;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+#github {
+  color: var(--font-color);
+}
