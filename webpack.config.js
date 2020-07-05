@@ -74,5 +74,7 @@ module.exports = (env, argv) => ({
     port: 9000,
     host: '0.0.0.0',
     disableHostCheck: true,
+    open: true,
+    openPage: 'http://localhost:9000',
   },
 });
