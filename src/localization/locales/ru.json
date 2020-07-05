@@ -1,5 +1,15 @@
 {
+  "apply": "Применить",
+  "cancel": "Отмена",
+  "dark": "Тёмная",
+  "english": "English (Английский)",
   "generate": "Генерировать",
+  "german": "German (Немецкий)",
+  "language": "Язык",
+  "light": "Светлая",
+  "russian": "Russian (Русский)",
   "save": "Сохранить",
+  "settings": "Настройки",
+  "theme": "Цветовая схема",
   "typeHere": "Текст тут..."
 }

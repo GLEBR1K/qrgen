@@ -1,5 +1,15 @@
 {
+  "apply": "Apply",
+  "cancel": "Cancel",
+  "dark": "Dark",
+  "english": "English",
   "generate": "Generate",
+  "german": "German",
+  "language": "Language",
+  "light": "Light",
+  "russian": "Russian",
   "save": "Save",
+  "settings": "Settings",
+  "theme": "Theme",
   "typeHere": "Type here..."
 }

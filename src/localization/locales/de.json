@@ -1,5 +1,15 @@
 {
+  "apply": "Speichern",
+  "cancel": "Abbrechen",
+  "dark": "Dunkles",
+  "english": "English (Englisch)",
   "generate": "Erzeugen",
+  "german": "German (Deutsche)",
+  "language": "Sprache",
+  "light": "Licht",
+  "russian": "Russian (Russisch)",
   "save": "Speichern",
-  "typeHere": "Geben Sie hier..."
+  "settings": "Einstellungen",
+  "theme": "Thema",
+  "typeHere": "Hier eingeben..."
 }

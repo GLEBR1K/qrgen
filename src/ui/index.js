@@ -1,9 +1,10 @@
 import qr from '../qr';
-
 import canvas from './canvas';
 import content from './content';
 import generate from './generate';
 import save from './save';
+import settings from './settings';
+import themeHelper from '../helpers/theme';
 
 const elements = {
   canvas,
@@ -20,9 +21,12 @@ const generateQrCode = (text) => {
 };
 
 const init = () => {
+  themeHelper.setTheme();
+
   canvas.init(generateQrCode);
   content.init();
   generate.init(generateQrCode);
+  settings.init();
 };
 
 export default {
