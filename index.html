@@ -43,13 +43,58 @@
               <span data-i18n="generate">Generate</span>
             </button>
 
-            <a href="#" id="save" class="button clear">
+            <a id="save" class="button clear">
               <i class="fas fa-arrow-alt-circle-down"></i>
               <span class="hide-xs" data-i18n="save">Save</span>
             </a>
+
+            <button id="settings" class="button clear">
+              <i class="fas fa-cog"></i>
+            </button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="footer">
+    <a id="github" class="button clear" href="https://github.com/GLEBR1K/qrgen" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+  </div>
+
+  <div id="settings-modal" class="is-center">
+    <div class="card">
+      <header>
+        <h4 data-i18n="settings">Settings</h4>
+      </header>
+
+      <div class="row">
+        <form class="col">
+          <label data-i18n="theme">Theme</label>
+          <p>
+            <select id="settings-theme" name="theme">
+              <option value="light" data-i18n="light">Light</option>
+              <option value="dark" data-i18n="dark">Dark</option>
+            </select>
+          </p>
+
+          <label data-i18n="language">Language</label>
+          <div>
+            <select id="settings-language" name="language">
+              <option value="de" data-i18n="german">German</option>
+              <option value="en" data-i18n="english">English</option>
+              <option value="ru" data-i18n="russian">Russian</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <footer class="col">
+          <button id="settings-save" type="submit" class="button primary" data-i18n="apply">Apply</button>
+          <a id="settings-cancel" class="button clear" data-i18n="cancel">Cancel</a>
+        </footer>
       </div>
     </div>
   </div>
