@@ -2,7 +2,7 @@
  "name": "qrgen",
  "short_name": "qrgen",
 
- "background_color": "black",
+ "background_color": "#232327",
  "display": "standalone",
  "start_url": "index.html",
  
