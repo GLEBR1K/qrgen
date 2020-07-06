@@ -2,6 +2,7 @@ import qr from '../qr';
 import canvas from './canvas';
 import content from './content';
 import generate from './generate';
+import open from './open';
 import save from './save';
 import settings from './settings';
 import themeHelper from '../helpers/theme';
@@ -11,6 +12,7 @@ const ui = {
     canvas,
     content,
     generate,
+    open,
     save,
   },
 
@@ -26,6 +28,7 @@ const ui = {
   generateQrCode: (text) => {
     qr.generate(text, (url) => {
       canvas.setSrc(url);
+      open.setContentToOpen(url);
       save.setContentToDownload(text, url);
     });
   },
