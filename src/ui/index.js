@@ -6,31 +6,29 @@ import save from './save';
 import settings from './settings';
 import themeHelper from '../helpers/theme';
 
-const elements = {
-  canvas,
-  content,
-  generate,
-  save,
+const ui = {
+  elements: {
+    canvas,
+    content,
+    generate,
+    save,
+  },
+
+  init: () => {
+    themeHelper.setTheme();
+
+    canvas.init(ui.generateQrCode);
+    content.init();
+    generate.init(ui.generateQrCode);
+    settings.init();
+  },
+
+  generateQrCode: (text) => {
+    qr.generate(text, (url) => {
+      canvas.setSrc(url);
+      save.setContentToDownload(text, url);
+    });
+  },
 };
 
-const generateQrCode = (text) => {
-  qr.generate(text, (url) => {
-    canvas.setSrc(url);
-    save.setContentToDownload(text, url);
-  });
-};
-
-const init = () => {
-  themeHelper.setTheme();
-
-  canvas.init(generateQrCode);
-  content.init();
-  generate.init(generateQrCode);
-  settings.init();
-};
-
-export default {
-  elements,
-  init,
-  generateQrCode,
-};
+export default ui;

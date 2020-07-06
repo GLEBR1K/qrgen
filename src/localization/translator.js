@@ -1,6 +1,9 @@
+import titleHelper from '../helpers/title';
+
 const i18nAttribute = 'data-i18n';
 const elementsSelector = `[${i18nAttribute}]`;
 const i18nConfigRegex = /(\[(?<type>\w+)\])?(?<key>\w+)/;
+const appSubtitleKey = 'qrCodeGenerator';
 
 const types = {
   default: '',
@@ -42,6 +45,7 @@ const execute = (i18n) => {
 const translator = (error, i18n) => {
   if (error) { return; }
   execute(i18n);
+  titleHelper.setSubtitle(i18n(appSubtitleKey));
 };
 
 export default translator;
