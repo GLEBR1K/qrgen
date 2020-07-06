@@ -1,8 +1,12 @@
 {
  "name": "qrgen",
  "short_name": "qrgen",
+ "description": "QR Code Generator",
+ "categories": ["utilities"],
 
- "background_color": "black",
+ "background_color": "#232327",
+ "theme_color": "#232327",
+
  "display": "standalone",
  "start_url": "index.html",
  
