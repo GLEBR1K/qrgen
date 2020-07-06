@@ -2,6 +2,7 @@ import titleHelper from '../helpers/title';
 
 const i18nAttribute = 'data-i18n';
 const elementsSelector = `[${i18nAttribute}]`;
+const valuesSeparator = '|';
 const i18nConfigRegex = /(\[(?<type>\w+)\])?(?<key>\w+)/;
 const appSubtitleKey = 'qrCodeGenerator';
 
@@ -11,10 +12,14 @@ const types = {
   text: 'text',
 };
 
-const getI18nConfig = (element) => {
-  const attribute = element.getAttribute(i18nAttribute);
+const getI18nConfig = (attribute) => {
   const { type, key } = attribute.match(i18nConfigRegex).groups;
   return { type: type || types.default, key };
+};
+
+const getAttributesToTranslate = (element) => {
+  const value = element.getAttribute(i18nAttribute);
+  return value.split(valuesSeparator);
 };
 
 const execute = (i18n) => {
@@ -22,23 +27,27 @@ const execute = (i18n) => {
 
   elements.forEach((element) => {
     const el = element;
-    const config = getI18nConfig(element);
-    const translatedText = i18n(config.key);
+    const attributes = getAttributesToTranslate(element);
 
-    switch (config.type) {
-      case types.default:
-      case types.text: {
-        el.innerText = translatedText;
-        break;
+    attributes.forEach((attribute) => {
+      const config = getI18nConfig(attribute);
+      const translatedText = i18n(config.key);
+
+      switch (config.type) {
+        case types.default:
+        case types.text: {
+          el.innerText = translatedText;
+          break;
+        }
+        case types.html: {
+          el.innerHTML = translatedText;
+          break;
+        }
+        default: {
+          el.setAttribute(config.type, translatedText);
+        }
       }
-      case types.html: {
-        el.innerHTML = translatedText;
-        break;
-      }
-      default: {
-        el.setAttribute(config.type, translatedText);
-      }
-    }
+    });
   });
 };
 
