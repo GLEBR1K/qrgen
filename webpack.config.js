@@ -12,7 +12,14 @@ module.exports = (env, argv) => ({
   optimization: {
     minimizer: [
       new TerserPlugin({ extractComments: false }),
-      new CssnanoPlugin()],
+      new CssnanoPlugin({
+        cssnanoOptions: {
+          preset: ['default', {
+            discardComments: { removeAll: true },
+          }],
+        },
+      }),
+    ],
   },
 
   entry: './src/index.js',
