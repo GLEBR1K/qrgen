@@ -17,10 +17,16 @@ const addEventListeners = () => {
   settingsCancel.addEventListener('click', () => {
     settingsModal.close();
   });
+
+  window.addEventListener('popstate', () => {
+    settingsModal.close();
+  });
 };
 
 settingsModal.open = () => {
+  window.history.pushState('forward', null, '');
   settingsModal.style.display = cssOpen;
+
   settingsModal.load();
 };
 
