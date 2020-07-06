@@ -34,27 +34,28 @@
 
         <div class="row">
           <div class="col is-center">
-            <textarea id="content" placeholder="Type here..." data-i18n="[placeholder]typeHere"></textarea>
+            <textarea id="content" placeholder="Type here..." title="Type here..." data-i18n="[placeholder]typeHere|[title]typeHere"></textarea>
           </div>
         </div>
 
         <div class="row">
           <div class="col is-center">
-            <button id="generate" class="button primary">
+            <button id="generate" class="button primary" title="Generate" data-i18n="[title]generate">
               <i class="fas fa-qrcode"></i>
               <span data-i18n="generate">Generate</span>
             </button>
 
-            <a id="save" class="button clear">
+            <a id="save" class="button clear" title="Save" data-i18n="[title]save">
               <i class="fas fa-arrow-alt-circle-down"></i>
               <span class="hide-xs" data-i18n="save">Save</span>
             </a>
 
-            <button id="settings" class="button clear">
+            <button id="settings" class="button clear" title="Settings" data-i18n="[title]settings">
               <i class="fas fa-cog"></i>
             </button>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -94,8 +95,8 @@
 
       <div class="row">
         <footer class="col">
-          <button id="settings-save" type="submit" class="button primary" data-i18n="apply">Apply</button>
-          <a id="settings-cancel" class="button clear" data-i18n="cancel">Cancel</a>
+          <button id="settings-save" type="submit" class="button primary" title="Apply" data-i18n="apply|[title]apply">Apply</button>
+          <a id="settings-cancel" class="button clear" title="Cancel" data-i18n="cancel|[title]cancel">Cancel</a>
         </footer>
       </div>
     </div>
