@@ -11,16 +11,22 @@ const helper = {
     if (savedTheme) { return savedTheme; }
 
     if (window.matchMedia && window.matchMedia(themeMediaElement).matches) {
+      helper.setTheme(themes.dark);
       return themes.dark;
     }
+
+    helper.setTheme(themes.light);
     return themes.light;
   },
 
-  setTheme: (theme) => {
+  setTheme: (theme, refresh) => {
     if (theme) {
       localStorage.setItem(localStorageKey, theme);
     }
-    helper.refreshTheme();
+
+    if (refresh) {
+      helper.refreshTheme();
+    }
   },
 
   refreshTheme: () => {

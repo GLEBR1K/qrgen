@@ -46,7 +46,7 @@ settingsModal.save = () => {
   const theme = settingsTheme.value;
   const language = settingsLanguage.value;
 
-  themeHelper.setTheme(theme);
+  themeHelper.setTheme(theme, true);
   i18n.setLanguage(language);
 
   settingsModal.close();

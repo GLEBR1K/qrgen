@@ -17,7 +17,7 @@ const ui = {
   },
 
   init: () => {
-    themeHelper.setTheme();
+    themeHelper.refreshTheme();
 
     canvas.init(ui.generateQrCode);
     content.init();
