@@ -1,8 +1,7 @@
 import i18n from '../localization';
 import themeHelper from '../helpers/theme';
 
-const cssOpen = 'flex';
-const cssClosed = 'none';
+const cssClassOpen = 'open';
 const settingsModal = document.getElementById('settings-modal');
 const settingsTheme = document.getElementById('settings-theme');
 const settingsLanguage = document.getElementById('settings-language');
@@ -25,13 +24,13 @@ const addEventListeners = () => {
 
 settingsModal.open = () => {
   window.history.pushState('forward', null, '');
-  settingsModal.style.display = cssOpen;
+  settingsModal.classList.add(cssClassOpen);
 
   settingsModal.load();
 };
 
 settingsModal.close = () => {
-  settingsModal.style.display = cssClosed;
+  settingsModal.classList.remove(cssClassOpen);
 };
 
 settingsModal.load = () => {
