@@ -1,4 +1,4 @@
-const invalidFilenameRegex = /[^a-z0-9]/gi;
+const invalidCharactersRegex = /[/\\*:?"<>|]/gi;
 const invalidCharacterReplacement = '_';
 
 const filenamePrefix = 'qrgen';
@@ -8,7 +8,7 @@ const maxLength = 255 - filenamePrefix.length - extension.length;
 const helper = {
   normalizeFilename: (filename) => filename
     .substring(0, maxLength)
-    .replace(invalidFilenameRegex, invalidCharacterReplacement)
+    .replace(invalidCharactersRegex, invalidCharacterReplacement)
     .toLowerCase()
     .concat(extension),
 
