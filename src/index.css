@@ -39,6 +39,12 @@ body.dark {
   text-align: center;
 }
 
+@media(max-height: 650px) {
+  .footer {
+    display: none;
+  }
+}
+
 #github {
   color: var(--font-color);
 }
