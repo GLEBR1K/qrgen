@@ -1,3 +1,5 @@
+import 'core-js/stable/promise';
+
 import i18n from './localization';
 import ui from './ui';
 

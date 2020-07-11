@@ -27,7 +27,6 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
-    "core-js": "^3.6.5",
     "css-loader": "^3.6.0",
     "cssnano-webpack-plugin": "^1.0.3",
     "eslint": "^7.3.1",
@@ -43,6 +42,7 @@
   },
   "dependencies": {
     "chota": "^0.8.0",
+    "core-js": "^3.6.5",
     "downloadjs": "^1.4.7",
     "fontawesome": "npm:@fortawesome/fontawesome-free@^5.13.1",
     "i18next": "^19.5.3",
