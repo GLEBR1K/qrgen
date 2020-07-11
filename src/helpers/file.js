@@ -1,4 +1,4 @@
-const invalidCharactersRegex = /[/\\*:?"<>|]/gi;
+const invalidCharactersRegex = /[/\\*:?"<>| ]/gi;
 const invalidCharacterReplacement = '_';
 
 const filenamePrefix = 'qrgen';
