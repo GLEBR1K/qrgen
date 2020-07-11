@@ -1,17 +1,23 @@
+@import '~chota/src/chota.css';
+
+@import '~fontawesome/css/fontawesome.css';
+@import '~fontawesome/css/brands.css';
+@import '~fontawesome/css/solid.css';
+
 html, body {
   height: 100%;
 }
 
 body {
   --color-primary: #377ae2;
-}
 
-body.dark {
-  --bg-color: #232327;
-  --bg-secondary-color: #131316;
-  --font-color: #f5f5f5;
-  --color-grey: #ccc;
-  --color-darkGrey: #777;
+  &.dark {
+    --bg-color: #232327;
+    --bg-secondary-color: #131316;
+    --font-color: #f5f5f5;
+    --color-grey: #ccc;
+    --color-darkGrey: #777;
+  }
 }
 
 .container {
@@ -51,10 +57,10 @@ body.dark {
 
 .button {
   padding: 0.8em 1em;
-}
 
-.button.clear {
-  padding: 0.8em;
+  &.clear {
+    padding: 0.8em;
+  }
 }
 
 .modal {
@@ -70,16 +76,16 @@ body.dark {
   transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
-}
 
-.modal.open {
-  visibility: visible;
-  opacity: 1;
-}
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
 
-.modal .card {
-  min-width: 300px;
-  margin: 20px;
+  .card {
+    min-width: 300px;
+    margin: 20px;
+  }
 }
 
 #open {
@@ -95,19 +101,21 @@ body.dark {
   padding: 5px;
 }
 
-#history-placeholder .card { 
-  max-width: 700px;
-}
+#history-placeholder {
+  .card { 
+    max-width: 700px;
+  }
 
-#history-placeholder div:not(:last-child) {
-  border-bottom: dashed 1px var(--color-darkGrey);
-}
+  div:not(:last-child) {
+    border-bottom: dashed 1px var(--color-darkGrey);
+  }
 
-#history-placeholder button {
-  margin: 5px;
-  padding: 0.5em;
-  border: none;
-  width: 100%;
-  text-align: left;
-  word-wrap: anywhere;
+  button {
+    margin: 5px;
+    padding: 0.5em;
+    border: none;
+    width: 100%;
+    text-align: left;
+    word-wrap: anywhere;
+  }
 }
