@@ -9,7 +9,7 @@ canvas.setSrc = (src) => {
 
 canvas.init = (generateQrCode) => {
   const param = urlHelper.getInitialTextFromUrl();
-  generateQrCode(param || initialText);
+  generateQrCode(param || initialText, true);
 };
 
 export default canvas;

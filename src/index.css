@@ -57,7 +57,7 @@ body.dark {
   padding: 0.8em;
 }
 
-#settings-modal {
+.modal {
   display: flex;
   position: fixed;
   z-index: 1;
@@ -72,11 +72,42 @@ body.dark {
   visibility: hidden;
 }
 
-#settings-modal.open {
+.modal.open {
   visibility: visible;
   opacity: 1;
 }
 
-#settings-modal .card {
-  min-width: 350px;
+.modal .card {
+  min-width: 300px;
+  margin: 20px;
+}
+
+#open {
+  position: relative;
+  left: 14px;
+}
+
+#history { 
+  position: relative;
+  top: -90px;
+  right: -20px;
+  color: var(--color-lightGrey);
+  padding: 5px;
+}
+
+#history-placeholder .card { 
+  max-width: 700px;
+}
+
+#history-placeholder div:not(:last-child) {
+  border-bottom: dashed 1px var(--color-darkGrey);
+}
+
+#history-placeholder button {
+  margin: 5px;
+  padding: 0.5em;
+  border: none;
+  width: 100%;
+  text-align: left;
+  word-wrap: anywhere;
 }

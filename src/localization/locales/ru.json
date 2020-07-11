@@ -1,10 +1,13 @@
 {
   "apply": "Применить",
+  "back": "Назад",
   "cancel": "Отмена",
+  "clear": "Очистить",
   "dark": "Тёмная",
   "english": "English (Английский)",
   "generate": "Генерировать",
   "german": "German (Немецкий)",
+  "history": "История",
   "language": "Язык",
   "light": "Светлая",
   "russian": "Russian (Русский)",

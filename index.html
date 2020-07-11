@@ -29,6 +29,9 @@
             <a id="open" target="blank" title="Open in new tab" data-i18n="[title]openInNewTab">
               <img id="canvas"></img>
             </a>
+            <a href="#" id="history" class="button clear" title="History" data-i18n="[title]history">
+              <i class="fas fa-history"></i>
+            </a>
           </div>
         </div>
 
@@ -66,7 +69,7 @@
     </a>
   </div>
 
-  <div id="settings-modal" class="is-center">
+  <div id="settings-modal" class="is-center modal">
     <div class="card">
       <header>
         <h4 data-i18n="settings">Settings</h4>
@@ -97,6 +100,25 @@
         <footer class="col">
           <button id="settings-save" type="submit" class="button primary" title="Apply" data-i18n="apply|[title]apply">Apply</button>
           <a id="settings-cancel" class="button clear" title="Cancel" data-i18n="cancel|[title]cancel">Cancel</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <div id="history-modal" class="is-center modal">
+    <div class="card">
+      <header>
+        <h4 data-i18n="history">History</h4>
+      </header>
+
+      <div class="row">
+        <div id="history-placeholder" class="col"></div>
+      </div>
+
+      <div class="row">
+        <footer class="col">
+          <button id="history-clear" class="button primary" title="Clear" data-i18n="clear|[title]clear">Clear</button>
+          <button id="history-back" class="button clear" title="Back" data-i18n="back|[title]back">Back</button>
         </footer>
       </div>
     </div>

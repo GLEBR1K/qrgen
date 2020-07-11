@@ -1,10 +1,13 @@
 {
   "apply": "Apply",
+  "back": "Back",
   "cancel": "Cancel",
+  "clear": "Clear",
   "dark": "Dark",
   "english": "English",
   "generate": "Generate",
   "german": "German",
+  "history": "History",
   "language": "Language",
   "light": "Light",
   "openInNewTab": "Open in new tab",
