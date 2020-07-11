@@ -24,6 +24,7 @@ const ui = {
 
     canvas.init(ui.generateQrCode);
     content.init();
+    save.init();
     generate.init(ui.generateQrCode);
     history.init(ui.elements.content, ui.generateQrCode);
     settings.init();
