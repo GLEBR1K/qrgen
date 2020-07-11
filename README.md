@@ -16,3 +16,12 @@
     Web QR Code Generator • <a href="https://glebr1k.github.io/qrgen">glebr1k.github.io/qrgen</a>
   </p>
 </div>
+
+### Key Fetures:
+
+- **Generate QR** code based on text
+- **Save QR** code as PNG (256x256)
+- **Open QR** code image in a new tab
+- **History**: the last 10 generated codes
+- **Multilingual support**: English, German, Russian
+- **Themes**: Light and Dark
