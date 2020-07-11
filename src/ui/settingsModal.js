@@ -18,7 +18,7 @@ const addEventListeners = () => {
   });
 
   window.addEventListener('popstate', () => {
-    settingsModal.close();
+    settingsModal.close(true);
   });
 };
 
@@ -29,7 +29,10 @@ settingsModal.open = () => {
   settingsModal.load();
 };
 
-settingsModal.close = () => {
+settingsModal.close = (popstate) => {
+  if (!popstate) {
+    window.history.back();
+  }
   settingsModal.classList.remove(cssClassOpen);
 };
 

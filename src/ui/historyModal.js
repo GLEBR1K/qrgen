@@ -19,7 +19,7 @@ const addEventListeners = () => {
   });
 
   window.addEventListener('popstate', () => {
-    historyModal.close();
+    historyModal.close(true);
   });
 };
 
@@ -47,7 +47,10 @@ historyModal.open = () => {
   historyModal.load();
 };
 
-historyModal.close = () => {
+historyModal.close = (popstate) => {
+  if (!popstate) {
+    window.history.back();
+  }
   historyModal.classList.remove(cssClassOpen);
 };
 
