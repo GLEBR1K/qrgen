@@ -1,7 +1,8 @@
 {
   "name": "qrgen",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web QR Core Generator",
+  "private": true,
   "main": "./src/index.js",
   "scripts": {
     "build": "webpack --mode production --config webpack.config.js",
@@ -15,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/GLEBR1K/qrgen.git"
   },
-  "author": "",
+  "author": "GLEBR1K",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GLEBR1K/qrgen/issues"
