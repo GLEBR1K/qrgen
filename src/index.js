@@ -3,7 +3,7 @@ import 'core-js/stable/promise';
 import i18n from './localization';
 import ui from './ui';
 
-import 'chota';
+import 'chota/src/chota.css';
 import 'fontawesome/css/fontawesome.css';
 import 'fontawesome/css/brands.css';
 import 'fontawesome/css/solid.css';
