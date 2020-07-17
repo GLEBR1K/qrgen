@@ -1,6 +1,6 @@
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import translator from './translator';
+import titleHelper from '../utils/title';
 import { en, de, ru } from './locales';
 
 const defaultLanguage = 'en';
@@ -13,6 +13,7 @@ const options = {
   fallbackLng: defaultLanguage,
   resources,
 };
+const appSubtitleKey = 'qrCodeGenerator';
 
 const i18n = {
   $: i18next,
@@ -20,7 +21,10 @@ const i18n = {
   init: () => {
     i18next
       .use(LanguageDetector)
-      .init(options, translator);
+      .init(options, (e, t) => {
+        if (e) return;
+        titleHelper.setSubtitle(t(appSubtitleKey));
+      });
   },
 
   getLanguage: (fallback) => {
@@ -30,9 +34,11 @@ const i18n = {
   },
 
   setLanguage: (value) => {
-    i18next.changeLanguage(value, () => {
-      i18n.init();
-    });
+    i18next
+      .changeLanguage(value)
+      .then((t) => {
+        titleHelper.setSubtitle(t(appSubtitleKey));
+      });
   },
 };
 

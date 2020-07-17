@@ -1,129 +1,30 @@
 ﻿<!DOCTYPE HTML>
 <html>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>qrgen</title>
-  
+
   <link rel="shortcut icon" href="icons/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
   <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#232327">
+
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#232327">
   <meta name="msapplication-config" content="browserconfig.xml">
   <meta name="msapplication-TileColor" content="#232327">
 
-  <link rel="stylesheet" href="dist/bundle.css">
+  <link rel="stylesheet" href="bundle.css">
 </head>
 
-<body class="is-center">
-  <div class="container">
-    <div class="row is-center">
-      <div class="col">
+<body>
+  <div id="app"></div>
 
-        <div class="row">
-          <div class="col is-center">
-            <a id="open" target="blank" title="Open in new tab" data-i18n="[title]openInNewTab">
-              <img id="canvas" />
-            </a>
-            <button id="history" class="button clear" title="History" data-i18n="[title]history">
-              <i class="fas fa-history"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col is-center">
-            <textarea id="content" placeholder="Type here..." title="Type here..." data-i18n="[placeholder]typeHere|[title]typeHere"></textarea>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col is-center">
-            <button id="generate" class="button primary" title="Generate" data-i18n="[title]generate">
-              <i class="fas fa-qrcode"></i>
-              <span data-i18n="generate">Generate</span>
-            </button>
-
-            <button id="save" class="button clear" title="Save" data-i18n="[title]save">
-              <i class="fas fa-arrow-alt-circle-down"></i>
-              <span class="hide-xs" data-i18n="save">Save</span>
-            </button>
-
-            <button id="settings" class="button clear" title="Settings" data-i18n="[title]settings">
-              <i class="fas fa-cog"></i>
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <a id="github" class="button clear" href="https://github.com/GLEBR1K/qrgen" target="_blank">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-  </div>
-
-  <div id="settings-modal" class="is-center modal">
-    <div class="card">
-      <header>
-        <h4 data-i18n="settings">Settings</h4>
-      </header>
-
-      <div class="row">
-        <form class="col">
-          <label data-i18n="theme">Theme</label>
-          <p>
-            <select id="settings-theme" name="theme">
-              <option value="light" data-i18n="light">Light</option>
-              <option value="dark" data-i18n="dark">Dark</option>
-            </select>
-          </p>
-
-          <label data-i18n="language">Language</label>
-          <div>
-            <select id="settings-language" name="language">
-              <option value="de" data-i18n="german">German</option>
-              <option value="en" data-i18n="english">English</option>
-              <option value="ru" data-i18n="russian">Russian</option>
-            </select>
-          </div>
-        </form>
-      </div>
-
-      <div class="row">
-        <footer class="col">
-          <button id="settings-save" type="submit" class="button primary" title="Apply" data-i18n="apply|[title]apply">Apply</button>
-          <a id="settings-cancel" class="button clear" title="Cancel" data-i18n="cancel|[title]cancel">Cancel</a>
-        </footer>
-      </div>
-    </div>
-  </div>
-
-  <div id="history-modal" class="is-center modal">
-    <div class="card">
-      <header>
-        <h4 data-i18n="history">History</h4>
-      </header>
-
-      <div class="row">
-        <div id="history-placeholder" class="col"></div>
-      </div>
-
-      <div class="row">
-        <footer class="col">
-          <button id="history-clear" class="button primary" title="Clear" data-i18n="clear|[title]clear">Clear</button>
-          <button id="history-back" class="button clear" title="Back" data-i18n="back|[title]back">Back</button>
-        </footer>
-      </div>
-    </div>
-  </div>
-
-  <script src="dist/bundle.js"></script>
+  <script src="bundle.js"></script>
 </body>
+
 </html>
