@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.0 - 2020-08-06
+
+### Updated:
+
+- Migrate to Vue
+
 ## v1.0 - 2020-07-12
 
 ### Added:
