@@ -5,14 +5,16 @@
     "es2020": true
   },
   "extends": [
+    "plugin:vue/essential",
     "airbnb-base"
   ],
-  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 11,
     "sourceType": "module"
   },
+  "plugins": [
+    "vue"
+  ],
   "rules": {
-    "linebreak-style": "off"
   }
 }

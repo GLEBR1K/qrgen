@@ -12,10 +12,14 @@ const helper = {
     .toLowerCase()
     .concat(extension),
 
-  getQrCodeFilename: (text) => helper
-    .normalizeFilename(text === filenamePrefix
-      ? text
-      : `${filenamePrefix}${invalidCharacterReplacement}${text}`),
+  getQrCodeFilename: (text) => {
+    const t = text || filenamePrefix;
+
+    return helper
+      .normalizeFilename(t === filenamePrefix
+        ? t
+        : `${filenamePrefix}${invalidCharacterReplacement}${t}`);
+  },
 };
 
 export default helper;

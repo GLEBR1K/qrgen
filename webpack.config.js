@@ -5,22 +5,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssnanoPlugin = require('cssnano-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = (env, argv) => ({
   devtool: argv.mode !== 'production' ? 'source-map' : 'none',
-
-  optimization: {
-    minimizer: [
-      new TerserPlugin({ extractComments: false }),
-      new CssnanoPlugin({
-        cssnanoOptions: {
-          preset: ['default', {
-            discardComments: { removeAll: true },
-          }],
-        },
-      }),
-    ],
-  },
 
   entry: './src/index.js',
 
@@ -35,37 +23,42 @@ module.exports = (env, argv) => ({
       {
         test: /\.js$/,
         use: ['babel-loader'],
-        exclude: /node_modules/,
       },
 
       {
-        test: /\.s[ac]ss$/,
+        test: /\.vue$/i,
+        use: ['vue-loader'],
+      },
+
+      {
+        test: /\.s[ac]ss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
 
       {
-        test: /\.svg$/,
+        test: /\.svg$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
           outputPath: 'svg',
-          publicPath: 'svg/',
+          publicPath: 'svg',
         },
       },
 
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
           outputPath: 'font',
-          publicPath: 'font/',
+          publicPath: 'font',
         },
       },
     ],
   },
 
   plugins: [
+    new VueLoaderPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'bundle.css',
@@ -74,6 +67,19 @@ module.exports = (env, argv) => ({
       maxChunks: 1,
     }),
   ],
+
+  optimization: {
+    minimizer: [
+      new TerserPlugin({ extractComments: false }),
+      new CssnanoPlugin({
+        cssnanoOptions: {
+          preset: ['default', {
+            discardComments: { removeAll: true },
+          }],
+        },
+      }),
+    ],
+  },
 
   devServer: {
     contentBase: __dirname,
